@@ -1,0 +1,109 @@
+<aside class="sidebar" [ngClass]="{collapseClass: isActive}">
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand m-0 py-2 brand-title" href="#">Bakkal Defteri</a>
+        <span></span>
+        <a class="navbar-brand py-2 material-icons toggle-sidebar" (click)="toggleSidebar()">menu</a>
+    </nav>
+
+    <nav class="navigation">
+        <ul>
+            <li class="active">
+                <a routerLink="/dashbord" routerLinkActive="active">
+                    <span class="nav-icon material-icons">public</span> Dashboard
+                </a>
+            </li>
+            <!--Categories-->
+            <li [ngClass]="{'open': showMenu === 'categories'}">
+                <a (click)="addExpandClass('categories')" title="Categories">
+                    <span class="nav-icon material-icons">supervisor_account</span> Kategoriler
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'categories')?'block':'none'}">
+                    <li>
+                        <a routerLink="/categories" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Categories List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--Customers-->
+            <li [ngClass]="{'open': showMenu === 'customers'}">
+                <a (click)="addExpandClass('customers')" title="Customers">
+                    <span class="nav-icon material-icons">supervisor_account</span> Müşteriler
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'customers')?'block':'none'}">
+                    <li>
+                        <a routerLink="/customers" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Customers List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--Suppliers-->
+            <li [ngClass]="{'open': showMenu === 'suppliers'}">
+                <a (click)="addExpandClass('suppliers')" title="Suppliers">
+                    <span class="nav-icon material-icons">supervisor_account</span> Alıcılar
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'suppliers')?'block':'none'}">
+                    <li>
+                        <a routerLink="/suppliers" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Suppliers List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--ProductCard-->
+            <li [ngClass]="{'open': showMenu === 'product-card'}">
+                <a (click)="addExpandClass('product-card')" title="ProductCard">
+                    <span class="nav-icon material-icons">supervisor_account</span> Ürün Kartı
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'product-card')?'block':'none'}">
+                    <li>
+                        <a routerLink="/product-card" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Product Card List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--StockCard-->
+            <li [ngClass]="{'open': showMenu === 'stock-card'}">
+                <a (click)="addExpandClass('stock-card')" title="StockCard">
+                    <span class="nav-icon material-icons">supervisor_account</span> Stok Kartı
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'stock-card')?'block':'none'}">
+                    <li>
+                        <a routerLink="/stock-card" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Stock Card List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--IncomingInvoices-->
+            <li [ngClass]="{'open': showMenu === 'incoming-invoices'}">
+                <a (click)="addExpandClass('incoming-invoices')" title="IncomingInvoices">
+                    <span class="nav-icon material-icons">supervisor_account</span> Gelen Faturalar
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'incoming-invoices')?'block':'none'}">
+                    <li>
+                        <a routerLink="/incoming-invoices" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Incoming Invoices List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--OutgoingInvoices-->
+            <li [ngClass]="{'open': showMenu === 'outgoing-invoices'}">
+                <a (click)="addExpandClass('outgoing-invoices')" title="OutgoingInvoices">
+                    <span class="nav-icon material-icons">supervisor_account</span> Giden Faturalar
+                    <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'outgoing-invoices')?'block':'none'}">
+                    <li>
+                        <a routerLink="/outgoing-invoices" routerLinkActive="active">
+                            <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Outgoing Invoices List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+</aside>
